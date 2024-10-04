@@ -23,8 +23,7 @@ public class BaseTest extends BaseConfig {
         driver.navigate().to(getProperty("application_url"));
     }
     @AfterMethod
-    public void tearDown () {
-        driver.quit();
+    public void tearDown () {driver.quit();
     }
     @AfterTest()
     public void endReport() {
