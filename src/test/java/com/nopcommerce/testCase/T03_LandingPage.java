@@ -16,11 +16,18 @@ public class T03_LandingPage extends BaseTest {
     public void testCase01() {
         P03_Landingpage landing = new P03_Landingpage(driver);
         softAssert = new SoftAssert();
+
+        String methodName = new Exception().getStackTrace()[0].getMethodName();
+        test = extent.createTest(methodName, "landing");
+        test.log(Status.INFO, "starting");
+        test.assignCategory("P0");
+
+
         landing.goToSection();
-        landing.getPrice();
-        Assert.assertTrue(landing.checkPrice());
+//        landing.getPrice();
+        softAssert.assertTrue(landing.checkPrice());
 
-
+        softAssert.assertAll();
 
 
     }
